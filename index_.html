@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Customizable 3D Button using SASS - CodePen</title>
+
+    <style>
+/* Functions */
+/* Mixins */
+/* Styles */
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+body {
+  font: 16px/1.5em Arial, sans-serif;
+  margin: 0 auto;
+  padding: 3em 0 2em;
+  max-width: 540px;
+}
+
+.note {
+  margin: 3em 0 0 2em;
+  padding: 0.5em 0 0.5em 2em;
+  border-left: 1px solid #b3b3b3;
+  color: #b3b3b3;
+}
+.note a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+.note a:hover {
+  border-bottom: 1px solid #33bbff;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  color: #f1f1f1;
+  outline: none;
+  text-shadow: -1px -1px 0 rgba(26, 26, 26, 0.5);
+  background: #33bbff;
+  background: -moz-linear-gradient(#1ab2ff, #4dc3ff), #33bbff;
+  background: -webkit-linear-gradient(#1ab2ff, #4dc3ff), #33bbff;
+  background: linear-gradient(#1ab2ff, #4dc3ff), #33bbff;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-box-shadow: inset 0 -1px 1px #66ccff, 0 8px 0 #0088cc, 0 10px 15px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: inset 0 -1px 1px #66ccff, 0 8px 0 #0088cc, 0 10px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 -1px 1px #66ccff, 0 8px 0 #0088cc, 0 10px 15px rgba(0, 0, 0, 0.35);
+  -moz-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+  /* Pass any colors you like, I hope the mixin will handle it */
+  padding: 0.5em 1em;
+  font: normal normal 3em/1 "Lobster", serif;
+  text-decoration: none;
+}
+.button:hover {
+  text-shadow: 0 0 5px rgba(241, 241, 241, 0.65), -1px -1px 0 rgba(26, 26, 26, 0.5);
+  background: #66ccff;
+  background: -moz-linear-gradient(#24b6ff, #5cc9ff), #66ccff;
+  background: -webkit-linear-gradient(#24b6ff, #5cc9ff), #66ccff;
+  background: linear-gradient(#24b6ff, #5cc9ff), #66ccff;
+  -moz-box-shadow: inset 0 -1px 1px #70cfff, 0 8px 0 #0096e0, 0 10px 15px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: inset 0 -1px 1px #70cfff, 0 8px 0 #0096e0, 0 10px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 -1px 1px #70cfff, 0 8px 0 #0096e0, 0 10px 15px rgba(0, 0, 0, 0.35);
+}
+.button:active, .button:focus {
+  top: 4px;
+  -moz-box-shadow: inset 0 -1px 1px #70cfff, 0 5px 0 #0096e0, 0 6px 8px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: inset 0 -1px 1px #70cfff, 0 5px 0 #0096e0, 0 6px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 -1px 1px #70cfff, 0 5px 0 #0096e0, 0 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+</style>
+
+    <script src="js/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <a href="#" class="button">SCSS Button</a>
+
+<p class="note">I just discovered the beautiful 3d button created by <a href="http://blog.typekit.com/2011/02/10/type-study-an-all-css-button/">Dan Cederholm</a> and quickly wanted to convert it into a Sass mixin that can be used throughout my current project. As a simple addition I removed the dependency on the  span wrapper tag he decided to use.</p>
+
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>

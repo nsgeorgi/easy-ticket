@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+body {
+	background-color: #666;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+#cust_det {
+	padding: 10px 40px 25px;
+	font-size: large;
+	width: 490px;
+	height: 250px;
+	border-radius: 10px;
+	font-family: raleway;
+	border: 2px solid #ccc;
+	background-color: #000;
+	color: #FFF;
+}
+#logout {
+	color: #FFF;
+	font-family: "Comic Sans MS", cursive;
+	
+}
+
+
+
+
+#navigation li {
+	display: inline;
+	list-style-type: none;
+	font-family: Arial;
+	font-size: 24px;
+	padding-right:0px;
+	/* [disabled]margin: 50px; */
+	
+	
+}
+#table01 {
+	
+	padding-top:65px;
+//	margin: 100 px;
+
+}
+
+#languages {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+#navigation a {
+	padding: 15px 25px;
+	
+	color: #FFF;
+	text-decoration: none;
+	border-radius: 30px;
+	background-color: #666
+	
+}
+#footer {
+	font-size: 14px;
+	position: absolute;
+	width: 100%;
+	bottom: -600px;
+	
+	height: 30px;
+	text-align: center;
+	
+}
+
+
+
+
+#navigation a:hover {
+background-color:#F90;
+color: #666;
+}
+
+#login_app {
+	padding: 10px 40px 25px;
+	font-size: large;
+	width: 490px;
+	height: 430px;
+	border-radius: 10px;
+	font-family: raleway;
+	border: 2px solid #ccc;
+	background-color: #000;
+	color: #FFF;
+}
+#title_{
+	font-family: "Comic Sans MS", cursive;
+	text-align: center;
+	background-color: #000;
+	color: #FFF;
+	 margin: 0px;
+	padding: 0px;
+	font-size:48px ;
+}
+
+
+
+#droplist {
+	height: 30px;
+	width: 300px;
+}
+.text {
+	font-family: "Comic Sans MS", cursive;
+	font-size: 16px;
+}
+
+.links {
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	padding-bottom: 30px;
+	
+	color: #990000;
+}
+
+
+.input_ {
+	
+	margin-bottom: 30px;
+	
+	
+}
+#about_title {
+	font-family: "Comic Sans MS", cursive;
+	text-align: center;
+	background-color: #000;
+	color: #FFF;
+	 
+	font-size:35px ;
+}
+
+
+
+.button {
+	display: inline-block;
+	color: #FFFFFF;
+	outline: none;
+	text-shadow: -1px -1px 0 rgba(26, 26, 26, 0.5);
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: inset 0 -1px 1px #66ccff, 0 8px 0 #0088cc, 0 10px 15px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: inset 0 -1px 1px #66ccff, 0 8px 0 #0088cc, 0 10px 15px rgba(0, 0, 0, 0.35);
+	box-shadow: inset 0 -1px 1px #FFF, 0 8px 0 #FFF, 0 10px 15px rgba(0, 0, 0, 0.35);
+	-moz-transition: all 100ms ease-in-out;
+	-o-transition: all 100ms ease-in-out;
+	-webkit-transition: all 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
+	padding : 10px;
+	/* Pass any colors you like, I hope the mixin will handle it */
+	
+	font: normal normal  "Lobster", serif;
+	text-decoration: none;
+	background-color: #000;
+}
+.button:hover {
+  text-shadow: 0 0 5px rgba(241, 241, 241, 0.65), -1px -1px 0 rgba(26, 26, 26, 0.5);
+  background: #66ccff;
+  background-color: #F90;
+  -moz-box-shadow: inset 0 -1px 1px #70cfff, 0 8px 0 #0096e0, 0 10px 15px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: inset 0 -1px 1px #70cfff, 0 8px 0 #0096e0, 0 10px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 -1px 1px #70cfff, 0 8px 0 #0096e0, 0 10px 15px rgba(0, 0, 0, 0.35);
+}
+.button:active, .button:focus {
+  top: 4px;
+  -moz-box-shadow: inset 0 -1px 1px #70cfff, 0 5px 0 #0096e0, 0 6px 8px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: inset 0 -1px 1px #70cfff, 0 5px 0 #0096e0, 0 6px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 -1px 1px #70cfff, 0 5px 0 #0096e0, 0 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+
+#login {
+	width: 300px;
+	border-radius: 10px;
+	font-family: raleway;
+	border: 2px solid #ccc;
+	padding: 10px 40px 25px;
+	margin-top: 70px;
+	background-color: #000;
+	color: #FFF;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}

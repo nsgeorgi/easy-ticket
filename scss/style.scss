@@ -1,0 +1,96 @@
+@import "compass/css3";
+
+/* Functions */
+
+@function color-brightness($color) {
+  @return ( 299 * red($color) + 587 * green($color) + 114 * blue($color) ) / 1000;
+}
+
+/* Mixins */
+
+$button-text-color-light-default: #f1f1f1 !default;
+$button-text-color-dark-default: #1a1a1a !default;
+$button-background-color-default: #33bbff !default;
+$button-contrast-treshold-default: 80 !default; // 125 is suggested by the w3c
+
+@mixin button(
+      $background-color: $button-background-color-default,
+      $text-color-light: $button-text-color-light-default,
+      $text-color-dark: $button-text-color-dark-default
+){
+  $text-color: if( abs(color-brightness($background-color) - color-brightness($text-color-light)) > $button-contrast-treshold-default, $text-color-light, $text-color-dark);
+  $text-color-inverted: if($text-color == $text-color-light, $text-color-dark, $text-color-light);
+  
+  position: relative;
+  display: inline-block;
+  color: $text-color;
+  outline: none;
+  
+  @include text-shadow(-1px -1px 0 transparentize($text-color-inverted, 0.5));
+  @include background-with-css2-fallback( linear-gradient(darken($background-color, 5%), lighten($background-color, 5%)), $background-color );
+  @include border-radius(6px);
+  @include box-shadow(
+    inset 0 -1px 1px lighten($background-color, 10%),
+    0 8px 0 darken($background-color, 20%),
+    0 10px 15px rgba(0, 0, 0, 0.35)
+  );
+  @include transition(all 100ms ease-in-out);
+  
+  &:hover {
+    @include text-shadow(
+      0 0 5px transparentize($text-color, 0.35), 
+      -1px -1px 0 transparentize($text-color-inverted, 0.5)
+    );
+    @include background-with-css2-fallback( linear-gradient(darken($background-color, 3%), lighten($background-color, 8%)), lighten($background-color, 10%) );
+    @include box-shadow(
+      inset 0 -1px 1px lighten($background-color, 12%),
+      0 8px 0 darken($background-color, 16%),
+      0 10px 15px rgba(0, 0, 0, 0.35)
+    );
+  }
+  
+  &:active,
+  &:focus {
+    top: 4px;
+    @include box-shadow(
+      inset 0 -1px 1px lighten($background-color, 12%),
+      0 5px 0 darken($background-color, 16%),
+      0 6px 8px rgba(0, 0, 0, 0.35)
+    );
+  }
+}
+
+/* Styles */
+
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+body {
+  font: 16px/1.5em Arial, sans-serif;
+  margin: 0 auto;
+  padding: 3em 0 2em;
+  max-width: 540px;
+}
+
+.note {
+  margin: 3em 0 0 2em;
+  padding: 0.5em 0 0.5em 2em;
+  border-left: 1px solid #b3b3b3;
+  color: #b3b3b3;
+  
+  a {
+    color: #000;
+    text-decoration: none; 
+  
+    &:hover {
+      border-bottom: 1px solid #33bbff;
+    }
+  }
+}
+
+.button {
+  @include button(); /* Pass any colors you like, I hope the mixin will handle it */
+  padding: 0.5em 1em;
+  font: normal normal 3em/1 "Lobster", serif;
+
+  text-decoration: none;
+}
