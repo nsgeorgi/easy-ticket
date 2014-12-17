@@ -14,7 +14,7 @@
  </script>
 
 <?php
-
+echo "test2" ; //TEST2
 session_start(); // Starting Session
 
 include "defines.php";
