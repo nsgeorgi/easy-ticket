@@ -25,6 +25,7 @@
 		$query = mysql_query("SELECT *  FROM login where username = '$_POST[username]' AND password = '$_POST[password]'");
 		$row = mysql_fetch_array($query);
 		if(!empty($row['username']) AND !empty($row['password'])){
+			header(""); // Fill the next page afer user login
 			echo "<p>Είσοδος επιτυχής</p>";
 			$username=$row['username'];
 			$_SESSION['loginUser']= $username;
