@@ -121,13 +121,13 @@
 	<tr>
 	<td>Όνομα:</td>
 	<td><input type="text" name="first_name" size="20" maxlength="20" value="<?php if (isset($trimmed['first_name'])) echo $trimmed['first_name']; ?>" /> 
-	<small>Επιτρέπονται μόνο λατινικοί χαρακτήρες.</smal</td>
+	<small>Επιτρέπονται μόνο λατινικοί χαρακτήρες.</small></td>
 	</tr>
 	
 	<tr>
 	<td>Επώνυμο: </td>
 	<td><input type="text" name="last_name" size="20" maxlength="40" value="<?php if (isset($trimmed['last_name'])) echo $trimmed['last_name']; ?>" />
-	<small>Επιτρέπονται μόνο λατινικοί χαρακτήρες.</smal</td></td>
+	<small>Επιτρέπονται μόνο λατινικοί χαρακτήρες.</small></td>
 	</tr>
 	
 	<tr>
