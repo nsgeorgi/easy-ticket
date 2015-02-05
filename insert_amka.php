@@ -10,17 +10,22 @@ ob_start();
 
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="C:\xampp\htdocs\Templates\dw.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
+<meta name="description" content="To   Easy Ticket  είναι ένα πρόγραμμα, το οποίο έχει ως σκοπό να αποφορτίζει τις ουρές αναμονής σε διάφορες υπηρεσίες, όπως η Εφορία ή ένα νοσοκομείο. Παρέχει στον ενδιαφερόμενο χρήστη, τη δυνατότητα να λαμβάνει σειρά στην ουρά είτε από κάποιο μηχάνημα της υπηρεσίας, είτε ηλεκτρονικά, από τον προσωπικό υπολογιστή του μέσω Internet, χωρίς να βρίσκεται απαραίτητα στο χώρο της υπηρεσίας. Ενημερώνει το χρήστη για την κατάσταση της ουράς κάθε χρονική στιγμή και προσφέρει μία εκτίμηση του χρόνου που θα χρειαστεί να περιμένει μέχρι να εξυπηρετηθεί. " />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Insert amka</title>
 <!-- InstanceEndEditable -->  
-<link href="images/delpi.jpg" rel="icon" type="image/png" />
-<link rel="stylesheet" href="main.css">
+ 
+<link rel="shortcut icon" href="images/favic.ico" type="image/x-icon">
+<link rel="icon" href="images/favic.ico" type="image/x-icon">
+ <link rel="stylesheet" href="main.css">
+
+
 <script>
-  <!--  
+    
      if($(window).width() < <?php echo SCREEN_WIDTH ?> )
 	       	document.location = "m.index.php";
-  -->    
+      
  </script>
 <!-- InstanceBeginEditable name="head" -->   
 
@@ -29,10 +34,10 @@ ob_start();
 
 <body> 
 <div id="container">
-
+ 
 <div align="center">
 <a href="index.php">
-<img src="logo_1163129_web.jpg" alt="asd" width="140" height="68" align="left" />  
+<img src="logo_1163129_web.jpg" alt="asd" width="140" height="40" align="left" />  
 </a>  
   <h2 id="title_"><em><strong><em><strong></strong></em>ΚΑΛΩΣΗΡΘΑΤΕ ΣΤΗΝ EASY TICKET ! </strong></em></h2>
 </div>
@@ -42,11 +47,10 @@ ob_start();
 <a href="index.php?lang=es"><img src="images/greece.png" /></a>
 </div>
 
-<nav align="center"> 
-<div id="navigation">
+
+<div id="navigation" align="center">
     <ul>
-      <li> </li>
-      <li></li> 
+    
       <li><a href="index.php"> Αρχική </a></li>
       <li><a href="products.php"> Προιόντα </a></li>
        <li><a href="about.php"> Σχετικά </a></li>
@@ -55,7 +59,7 @@ ob_start();
     </ul>
   
 </div>
-</nav>
+
 <!-- InstanceBeginEditable name="lol" -->
 
 
@@ -65,7 +69,7 @@ ob_start();
 <div align="center">
   <p><!-- Begin DWUser_EasyRotator -->
 <script type="text/javascript" src="http://c520866.r66.cf2.rackcdn.com/1/js/easy_rotator.min.js"></script>
-<div class="dwuserEasyRotator" style="width: 1000px; height: 417px; position:relative; text-align: left;" data-erconfig="{autoplayEnabled:false, lpp:'102-105-108-101-58-47-47-47-67-58-47-85-115-101-114-115-47-78-105-99-107-47-68-111-99-117-109-101-110-116-115-47-69-97-115-121-82-111-116-97-116-111-114-80-114-101-118-105-101-119-47-112-114-101-118-105-101-119-95-115-119-102-115-47', wv:1}" data-ername="eeee" data-ertid="{awl2764tt9713363865141}">
+<div mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" class="dwuserEasyRotator" style="width: 1000px; height: 417px; position:relative; text-align: left;" data-erconfig="{autoplayEnabled:false, lpp:'102-105-108-101-58-47-47-47-67-58-47-85-115-101-114-115-47-78-105-99-107-47-68-111-99-117-109-101-110-116-115-47-69-97-115-121-82-111-116-97-116-111-114-80-114-101-118-105-101-119-47-112-114-101-118-105-101-119-95-115-119-102-115-47', wv:1}" data-ername="eeee" data-ertid="{awl2764tt9713363865141}">
   <div data-ertype="content" style="display: none;"><ul data-erlabel="Main Category">
 	<li>
     <img class="main" src="thief.jpg" alt="Waiting to be served? Not anymore!" /> <img class="thumb" src="thief.jpg" /> 
@@ -126,10 +130,7 @@ ob_start();
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="body" --> 
 <?php
-if (!isset($_GET['amka']))
-   $amka = "";
-else
-   $amka = $_GET['amka'];
+
    
 // We will receive error messages
 // from the validation page
@@ -153,9 +154,8 @@ if ($error != '')
     
       <input type="hidden" name="hash" id="hash" value="<?php echo microtime(); ?>" />
      <br />
-    <em><strong>   Παρακαλούμε πληκτρολογήστε το ΑΜΚΑ σας: <br /> </strong></em> 
-    <em><strong>     AMKA: </strong></em><input type="text" name="amka" id="amka"    value="<?php echo $amka; ?>"  maxlength="11"/> <br /> <br /><br />
-  <em><strong>   Αν θες να ενημερωθείς με κατάλληλο sms στο κινητό ,παρακαλώ πληκτρολόγησε το παρακάτω.  <br /></strong></em> <br /> <em><strong>       ΚΙΝΗΤΟ: </strong></em><input type="text" name="mobile"  value="" maxlength="10"/>  <br />  <br />
+  
+  <em><strong>   Αν θες να ενημερωθείς με κατάλληλο sms στο κινητό ,παρακαλώ πληκτρολόγησε το παρακάτω.  <br /></strong></em> <br /> <em><strong>       ΚΙΝΗΤΟ: </strong></em><input type="text" name="mobile"  value="" maxlength="10"/> <span style="color:#900">(οptional    ) </span>  <br />  <br />
       <input type="submit" name="submit" class="button" value="Καταχώρηση" />
     </form>
  
@@ -177,12 +177,15 @@ if ($error != '')
 
 
   <script src="js/index.js"></script>
- 
-   
+  <div class="push">
+  </div>
 <div id="footer">
-  
-<img src="images/copy.png"  alt="asd" width="20" height="10"  />  Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
+   
+ Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
 </div>
 </div>
+
+
+
 </body>
 <!-- InstanceEnd --></html>

@@ -1,18 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php session_start(); ?>
+<?php session_start(); 
+include('defines.php');
+$page = $_SERVER['PHP_SELF'];
+$sec = "60";
+date_default_timezone_set('Europe/Athens');
+$username=$_SESSION['login_user']?>
+
+
+
+
+
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="C:\xampp\htdocs\Templates\dw.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
+<meta name="description" content="To   Easy Ticket  είναι ένα πρόγραμμα, το οποίο έχει ως σκοπό να αποφορτίζει τις ουρές αναμονής σε διάφορες υπηρεσίες, όπως η Εφορία ή ένα νοσοκομείο. Παρέχει στον ενδιαφερόμενο χρήστη, τη δυνατότητα να λαμβάνει σειρά στην ουρά είτε από κάποιο μηχάνημα της υπηρεσίας, είτε ηλεκτρονικά, από τον προσωπικό υπολογιστή του μέσω Internet, χωρίς να βρίσκεται απαραίτητα στο χώρο της υπηρεσίας. Ενημερώνει το χρήστη για την κατάσταση της ουράς κάθε χρονική στιγμή και προσφέρει μία εκτίμηση του χρόνου που θα χρειαστεί να περιμένει μέχρι να εξυπηρετηθεί. " />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Customer</title>
 <!-- InstanceEndEditable -->  
-<link href="images/delpi.jpg" rel="icon" type="image/png" />
-<link rel="stylesheet" href="main.css">
+ 
+<link rel="shortcut icon" href="images/favic.ico" type="image/x-icon">
+<link rel="icon" href="images/favic.ico" type="image/x-icon">
+ <link rel="stylesheet" href="main.css">
+
+
 <script>
-  <!--  
+    
      if($(window).width() < <?php echo SCREEN_WIDTH ?> )
 	       	document.location = "m.index.php";
-  -->    
+      
  </script>
 <!-- InstanceBeginEditable name="head" -->   
 
@@ -21,10 +36,10 @@
 
 <body> 
 <div id="container">
-
+ 
 <div align="center">
 <a href="index.php">
-<img src="logo_1163129_web.jpg" alt="asd" width="140" height="68" align="left" />  
+<img src="logo_1163129_web.jpg" alt="asd" width="140" height="40" align="left" />  
 </a>  
   <h2 id="title_"><em><strong><em><strong></strong></em>ΚΑΛΩΣΗΡΘΑΤΕ ΣΤΗΝ EASY TICKET ! </strong></em></h2>
 </div>
@@ -34,11 +49,10 @@
 <a href="index.php?lang=es"><img src="images/greece.png" /></a>
 </div>
 
-<nav align="center"> 
-<div id="navigation">
+
+<div id="navigation" align="center">
     <ul>
-      <li> </li>
-      <li></li> 
+    
       <li><a href="index.php"> Αρχική </a></li>
       <li><a href="products.php"> Προιόντα </a></li>
        <li><a href="about.php"> Σχετικά </a></li>
@@ -47,17 +61,19 @@
     </ul>
   
 </div>
-</nav>
+
 <!-- InstanceBeginEditable name="lol" -->
 
 
-
+<div  align="right"  >
+<span> Welcome <?php echo $username; ?> ! </span> </br>
+<a class="links" id="logout"  href="logout.php">Log Out <?php/* echo $username; */?></a></div>
 
 
 <div align="center">
   <p><!-- Begin DWUser_EasyRotator -->
 <script type="text/javascript" src="http://c520866.r66.cf2.rackcdn.com/1/js/easy_rotator.min.js"></script>
-<div class="dwuserEasyRotator" style="width: 1000px; height: 417px; position:relative; text-align: left;" data-erconfig="{autoplayEnabled:false, lpp:'102-105-108-101-58-47-47-47-67-58-47-85-115-101-114-115-47-78-105-99-107-47-68-111-99-117-109-101-110-116-115-47-69-97-115-121-82-111-116-97-116-111-114-80-114-101-118-105-101-119-47-112-114-101-118-105-101-119-95-115-119-102-115-47', wv:1}" data-ername="eeee" data-ertid="{awl2764tt9713363865141}">
+<div mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" class="dwuserEasyRotator" style="width: 1000px; height: 417px; position:relative; text-align: left;" data-erconfig="{autoplayEnabled:false, lpp:'102-105-108-101-58-47-47-47-67-58-47-85-115-101-114-115-47-78-105-99-107-47-68-111-99-117-109-101-110-116-115-47-69-97-115-121-82-111-116-97-116-111-114-80-114-101-118-105-101-119-47-112-114-101-118-105-101-119-95-115-119-102-115-47', wv:1}" data-ername="eeee" data-ertid="{awl2764tt9713363865141}">
   <div data-ertype="content" style="display: none;"><ul data-erlabel="Main Category">
 	<li>
 		 <img class="main" src="thief.jpg" alt="Waiting to be served? Not anymore!" /> <img class="thumb" src="thief.jpg" /> 
@@ -116,13 +132,138 @@
 <!-- End DWUser_EasyRotator --></p>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="body" --> 
-<?php $_SESSION['service']   = $_POST['service'];
+
+ 
 
 
+
+<?php
+				//	SEMINA 
+ 
+//include('defines.php');
+if  (isset($_GET['service']) )   {
+$_SESSION['service']   = $_GET['service'];
+}
+$service = $_SESSION['service']   ;
+
+$diff   = $_GET['diff'];
+$num_results   = $_GET['num_results'];
+
+  
+
+$con = mysqli_connect(HOST, USER, PASS, DB) or die(mysqli_connect_error());
+ 
+	 mysqli_query($con,"SET NAMES 'utf8'");
+	 $query="SELECT * FROM 	upiresia where name='$service' ";
+	
+	$res = mysqli_query($con, $query) or die(mysqli_error());
+	$row = mysqli_fetch_array($res);
+	echo 'ΩΡΕΣ ΛΕΙΤΟΥΡΓΙΑΣ: </br> </br> ΩΡΑ ΕΝΑΡΞΗΣ : ' ;
+	echo $row['start'] ;
+	echo ' </br>  '; 
+	echo 'ΩΡΑ ΛΗΞΗΣ : '; 
+	echo  $row['end']; 
+	echo ' </br> </br> '; 
+	echo 'ΑΡΙΘΜΟΣ ΑΤΟΜΩΝ ΓΙΑ ΕΞΥΠΗΡΕΤΗΣΗ : ';
+	echo $row['people'];
+	echo ' </br> ';  
+	$query="SELECT * FROM 	`$service` ";
+	$now = new DateTime();
+//	echo $now->format(' H:i:s');
+	//echo time() ; 
+if   (   strtotime($row['start']) > time() || strtotime($row['end'])  < time()  ) {
+	
+ echo '<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="bootbox.min.js"></script>
+    
+    <script type="text/javascript">
+        bootbox.alert("H υπηρεσία μας δεν είναι διαθέσιμη αυτή τη στιγμή . Παρακαλώ κοιτάξτε τις ώρες λειτουργίας της υπηρεσίας μας.")
+
+        
+    </script> ';
+	
+}
+
+		// SEMINA 
+?>
+
+  
+ <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="bootbox.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+	  
+  $('#button1').click(function(){
+     <?php
+	 if   (  strtotime($row['start']) > time() || strtotime($row['end'])  < time()  )   { 
+	 echo'window.location = "insert_amka.php" '; 
+	
+	 }
+	 else { echo ' bootbox.alert("Πρέπει να  ολοκληρώσετε τις ρυθμίσεις για να μεταβείτε στην σελίδα! ") ';} ?>
+  });
+});
+  
+  
+	</script>
+    
+    
+     <script type="text/javascript">
+  $(document).ready(function(){
+	  
+  $('#button2').click(function(){
+     <?php
+	 if   (   strtotime($row['start']) > time() || strtotime($row['end'])  < time()  )   { 
+	 echo'window.location = "validate_already_num.php" '; 
+	
+	 }
+	 else { echo ' bootbox.alert("Πρέπει να  ολοκληρώσετε τις ρυθμίσεις για να μεταβείτε στην σελίδα! ") ';} ?>
+  });
+});
+  
+  
+	</script>
+    
+    
+    <style>
+  body {background-color:black}
+  #title_ {width: 100%;
+	font-family: "Comic Sans MS", cursive;
+	text-align: center;
+	background-color: #FFF ;
+	color: #000;
+	 margin: 0px;
+	padding: 0px;
+	font-size:28px ;
+	border: 8px solid #FFF;
+	border-bottom:thin;
+	border-bottom-color:#FFF;
+   }
+</style>
+    
+ 
+  <?php
+  
+  
+if (!$num_results) { $diff=15;   $num_results=0;} 
+   echo '<h2 id="title_"><em><strong><em><strong></strong></em> Υπηρεσία : '; echo $service; echo  '   </strong></em></h2> </br></br>';
+	echo '<h2 id="title_"><em><strong><em><strong></strong></em> Αριθμός πελατών στην ουρά : '; echo $num_results; echo  '   </strong></em></h2> </br></br>';
+	 echo '<h2 id="title_"><em><strong><em><strong></strong></em> Mέσος χρόνος αναμονής: '; echo "$diff λεπτά"; echo   '  </strong></em></h2> </br></br>';
+	
 
 ?>
- <a href="insert_amka.php" class="button" style="margin-top:50px; margin-right:50px">Nέο χαρτάκι</a>
- <a href="already_number.php" class="button" style="margin-top:50px;">Έχω ήδη χαρτάκι</a>
+
+
+
+
+
+ <button  id="button1" class="button" style="margin-top:50px; margin-right:50px">Nέο χαρτάκι</button>
+ <button  id="button2" class="button" style="margin-top:50px;">Έχω ήδη χαρτάκι</button>
 
  <!-- InstanceEndEditable -->
   
@@ -131,12 +272,15 @@
 
 
   <script src="js/index.js"></script>
- 
-   
+  <div class="push">
+  </div>
 <div id="footer">
-  
-<img src="images/copy.png"  alt="asd" width="20" height="10"  />  Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
+   
+ Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
 </div>
 </div>
+
+
+
 </body>
 <!-- InstanceEnd --></html>

@@ -12,10 +12,10 @@
 	define ("AMKA_LENGTH", 11);
 	define ("MOBILE_LENGTH", 10);
 
-  define ("HOST", "localhost"); //lol
-  define ("USER", "lol");  //12345 
-  define ("PASS", "12345");
-  define ("DB", "easy_ticket");
+  define ("HOST", "db36.grserver.gr"); //db36.grserver.gr  nsgeorgi drakopoulos1234 nickgeo676684_
+  define ("USER", "nsgeorgi");  //localhost lol 12345 easy_ticket
+  define ("PASS", "drakopoulos1234");
+  define ("DB", "nickgeo676684_");
 ?>
 
 </body>

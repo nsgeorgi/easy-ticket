@@ -1,18 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php 
+session_start() ;
+?>
 
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="C:\xampp\htdocs\Templates\dw.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
+<meta name="description" content="To   Easy Ticket  είναι ένα πρόγραμμα, το οποίο έχει ως σκοπό να αποφορτίζει τις ουρές αναμονής σε διάφορες υπηρεσίες, όπως η Εφορία ή ένα νοσοκομείο. Παρέχει στον ενδιαφερόμενο χρήστη, τη δυνατότητα να λαμβάνει σειρά στην ουρά είτε από κάποιο μηχάνημα της υπηρεσίας, είτε ηλεκτρονικά, από τον προσωπικό υπολογιστή του μέσω Internet, χωρίς να βρίσκεται απαραίτητα στο χώρο της υπηρεσίας. Ενημερώνει το χρήστη για την κατάσταση της ουράς κάθε χρονική στιγμή και προσφέρει μία εκτίμηση του χρόνου που θα χρειαστεί να περιμένει μέχρι να εξυπηρετηθεί. " />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" --> 
 <title>Home</title>
 <!-- InstanceEndEditable -->  
-<link href="images/delpi.jpg" rel="icon" type="image/png" />
-<link rel="stylesheet" href="main.css">
+ 
+<link rel="shortcut icon" href="images/favic.ico" type="image/x-icon">
+<link rel="icon" href="images/favic.ico" type="image/x-icon">
+ <link rel="stylesheet" href="main.css">
+
+
 <script>
-  <!--  
+    
      if($(window).width() < <?php echo SCREEN_WIDTH ?> )
 	       	document.location = "m.index.php";
-  -->    
+      
  </script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
@@ -20,10 +28,10 @@
 
 <body> 
 <div id="container">
-
+ 
 <div align="center">
 <a href="index.php">
-<img src="logo_1163129_web.jpg" alt="asd" width="140" height="68" align="left" />  
+<img src="logo_1163129_web.jpg" alt="asd" width="140" height="40" align="left" />  
 </a>  
   <h2 id="title_"><em><strong><em><strong></strong></em>ΚΑΛΩΣΗΡΘΑΤΕ ΣΤΗΝ EASY TICKET ! </strong></em></h2>
 </div>
@@ -33,11 +41,10 @@
 <a href="index.php?lang=es"><img src="images/greece.png" /></a>
 </div>
 
-<nav align="center"> 
-<div id="navigation">
+
+<div id="navigation" align="center">
     <ul>
-      <li> </li>
-      <li></li> 
+    
       <li><a href="index.php"> Αρχική </a></li>
       <li><a href="products.php"> Προιόντα </a></li>
        <li><a href="about.php"> Σχετικά </a></li>
@@ -46,7 +53,7 @@
     </ul>
   
 </div>
-</nav>
+
 <!-- InstanceBeginEditable name="lol" -->
 
 
@@ -64,7 +71,7 @@
 
 <!-- Begin DWUser_EasyRotator -->
 <script type="text/javascript" src="http://c520866.r66.cf2.rackcdn.com/1/js/easy_rotator.min.js"></script>
-<div class="dwuserEasyRotator" style="width: 1000px; height: 417px; position:relative; text-align: left;" data-erconfig="{autoplayEnabled:true, lpp:'102-105-108-101-58-47-47-47-67-58-47-85-115-101-114-115-47-78-105-99-107-47-68-111-99-117-109-101-110-116-115-47-69-97-115-121-82-111-116-97-116-111-114-80-114-101-118-105-101-119-47-112-114-101-118-105-101-119-95-115-119-102-115-47', wv:1}" data-ername="eeee" data-ertid="{awl2764tt9713363865141}">
+<div mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" class="dwuserEasyRotator" style="width: 1000px; height: 417px; position:relative; text-align: left;" data-erconfig="{autoplayEnabled:true, lpp:'102-105-108-101-58-47-47-47-67-58-47-85-115-101-114-115-47-78-105-99-107-47-68-111-99-117-109-101-110-116-115-47-69-97-115-121-82-111-116-97-116-111-114-80-114-101-118-105-101-119-47-112-114-101-118-105-101-119-95-115-119-102-115-47', wv:1}" data-ername="eeee" data-ertid="{awl2764tt9713363865141}">
   <div data-ertype="content" style="display: none;"><ul data-erlabel="Main Category">
 	<li>
 		<img class="main" src="thief.jpg" alt="Waiting to be served? Not anymore!" /> <img class="thumb" src="thief.jpg" /> 
@@ -131,8 +138,58 @@
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="body" --> 
 
- <a href="choose_service.php" class="button" style="margin-top:50px; margin-right:50px">Πρόσβαση ως πελάτης</a>
+
+ 
+ <a href="login_home.php" class="button" style="margin-top:50px; margin-right:50px">Πρόσβαση ως πελάτης</a>
  <a href="public_service.php" class="button" style="margin-top:50px">Πρόσβαση ως υπηρεσία</a>
+ </br></br></br></br></br></br> 
+ <style>.xg_module_body img {margin:0!important;}</style>
+<div align="center"><table cellpadding="0" width="400" cellspacing="0"><tr>
+<td><a href="http://www.facebook.com/pages/yourfanpage/12345678" target="_blank"><img src="http://api.ning.com/files/MDqSwhCErxpAQCHv4V6BYNGSo6HZtPRtmdNol8nUrh*9kn1SnIvLjlpZd6Ko*QzkrV*cTHhej40aypylc9FNyuGQpVsVCJyS/facebooks3_128.png" alt="Join Our Facebook Fan Page" width="128" height="128" border="0"></a></td>
+
+
+
+<td><a href="http://twitter.com/yourtwitter" target="_blank"><img src="http://api.ning.com/files/DsEd0qFuUcyyy80lToFsf7IsEIyNbOEfUNaXKa1B3Jg6Oyf*PzQO3DZuQ3sltrfVqgifMzcq59A7ip8S0KYYtSYbsFhBFNrX/twitters3_128.png" alt="Follow Us On Twitter" width="128" height="128" border="0"></a></td>
+</tr></table></div>
+
+<!-- 
+
+<div id="14203910299647" class="wE"><script src="http://widget-engine.com/w:0:003:14203910299647:1:ffffff:40" type="text/javascript"></script><a href="http://widget-engine.com/ratingcode.php" class="wE" title="Free Rating Code for your webprojects">Get free premium widgets for your blog and website.</a></div>
+  -->
+</br></br> </br></br> 
+<div align="center">
+<div class="rw-ui-container" > 
+<script type="text/javascript">(function(d, t, e, m){
+        // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+                
+        RW.init({
+            huid: "210541",
+            uid: "b1b104261bff4aa62ccf08dc675c9fd3",
+            source: "website",
+            options: {
+                "size": "medium",
+                "style": "oxygen"
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+ </div>
+ </div>
+ 
+ 
 
  <!-- InstanceEndEditable -->
   
@@ -141,12 +198,15 @@
 
 
   <script src="js/index.js"></script>
- 
-   
+  <div class="push">
+  </div>
 <div id="footer">
-  
-<img src="images/copy.png"  alt="asd" width="20" height="10"  />  Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
+   
+ Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
 </div>
 </div>
+
+
+
 </body>
 <!-- InstanceEnd --></html>

@@ -26,40 +26,13 @@ session_start() ;
 
 $error = '';
 $service= $_SESSION['service'] ;
-if(isset($_POST['submit'])) {
 
 
-  if(isset($_POST['amka'])) {
-    $_POST['amka']=preg_replace("/[^0-9]/", "", $_POST['amka']);
-
-    if(strlen($_POST['amka']) != AMKA_LENGTH)
-    {
-		$error = 'Μη εγκύρος ΑΜΚΑ, βεβαιωθείτε οτι ο ΑΜΚΑ που έχετε εισάγει είναι σωστός και προσπαθήστε ξανα <br />'; 
-      echo $error;
-    //  return;
-    }
-	
-/*	if(strlen($_POST['mobile']) != MOBILE_LENGTH || strlen($_POST['mobile']) != 0)
-    {
-      echo 'Μη εγκύρος αριθμός κινητού, βεβαιωθείτε ότι ο αριθμός του κινητού  που έχετε εισάγει είναι σωστός και προσπαθήστε ξανα';
-      return;
-    }   */
-
-    $day = substr($_POST['amka'], 0, 2);
-    $month =substr($_POST['amka'], 2, 2);
-    $year =substr($_POST['amka'], 4, 2);
-
-    if(!checkdate($month,$day, $year)) { 
-	$error = 'Μη εγκύρος ΑΜΚΑ, βεβαιωθείτε οτι ο ΑΜΚΑ που έχετε εισάγει είναι σωστός και προσπαθήστε ξανα <br />'; 
-      echo $error;
-    // return;
-    }
-		
 	
 	// Build the query string to be attached 
 // to the redirected URL
-$amka=$_POST['amka'];
-$query_string = '?amka=' . $amka;
+$username =$_SESSION['login_user'];
+$query_string = '?username=' . $username;
 
 // Redirection needs absolute domain and phisical dir
 $server_dir = $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF']), '/\\') . '/';
@@ -89,8 +62,8 @@ else $next_page = 'getnumber.php';
 
     $con = mysqli_connect(HOST, USER, PASS, DB) or die(mysqli_connect_error());
 
- 
-    $query = "select * from `$service` where amka ='$_POST[amka]'";
+  $service= $_SESSION['service'] ;
+     $query = "select * from  `$service` where username ='$username' ";
 
     $res = mysqli_query($con, $query) or die(mysqli_error());
    
@@ -98,8 +71,8 @@ else $next_page = 'getnumber.php';
 	  $num_results = mysqli_num_rows($res); 
 	  
       if($num_results > 0) {
-		  $error = 'O AMKΑ που πληκτρολογήσατε έχει πάρει θέση στην ουρά. <br />'; 
-	echo $error;
+		  $error = 'Έχετε ήδη πάρει θέση στην ουρά. <br />'; 
+	//echo $error;
 	$t=date("H:i:s", time());
 	
 $my_time    =   strtotime($row['time']);
@@ -113,7 +86,7 @@ else { echo "  perase i seira  !!"; }
 return ;  */
 	  if ($my_time < $current_time ) { 
 	    $attempt= $row['attempt'];
- 	   $query = "Update  `$service` set line = 0 where amka ='$_POST[amka]' "or die(mysqli_error());
+ 	   $query = "Update  `$service` set line = 0 where username ='$username' "or die(mysqli_error());
 	   $res = mysqli_query($con, $query) or die(mysqli_error());
 $next_page1 = 'second_attempt.php';
    // Add error message to the query string
@@ -124,10 +97,10 @@ $next_page1 = 'second_attempt.php';
   return ;	  }
 	  
 	  }
-	 	if($num_results == 0) {  $error = 'O AMKΑ που πληκτρολογήσατε δεν έχει πάρει θέση στην ουρά. <br />'; 
+	 	if($num_results == 0) {  $error = 'Δεν έχετε  πάρει θέση στην ουρά. <br />'; 
 	echo $error;
 	 echo '<br /> 
-    <a class="button" href="already_number.php">Πίσω </a> ';
+    <a class="button" href="choose_service.php">Πίσω </a> ';
  
 	return;
 	  
@@ -145,8 +118,8 @@ $number=$row['number'];
 
    // echo "Έχετε τον αριθμό $number_rows. Παρακαλούμε να προσέλθετε στη δημόσια υπηρεσία με το ΑΜΚΑ σας $_POST[amka] και την ταυτότητά σας.";
  
-  }
-}
+  
+
 //Redirect to confirmation page
 
 $query_string1 = '&time=' . $time;

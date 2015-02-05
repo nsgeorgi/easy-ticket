@@ -53,7 +53,7 @@ if (isset($_POST['from']))
   $message = wordwrap($message, 70);
    
  
-  mail('nickgeo_hotmail.com', $subject, $message, "From: $from");  }
+  mail('nickgeo_@hotmail.com', $subject, $message, "From: $from");  }
   
   
 

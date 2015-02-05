@@ -1,17 +1,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="C:\xampp\htdocs\Templates\dw.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
+<meta name="description" content="To   Easy Ticket  είναι ένα πρόγραμμα, το οποίο έχει ως σκοπό να αποφορτίζει τις ουρές αναμονής σε διάφορες υπηρεσίες, όπως η Εφορία ή ένα νοσοκομείο. Παρέχει στον ενδιαφερόμενο χρήστη, τη δυνατότητα να λαμβάνει σειρά στην ουρά είτε από κάποιο μηχάνημα της υπηρεσίας, είτε ηλεκτρονικά, από τον προσωπικό υπολογιστή του μέσω Internet, χωρίς να βρίσκεται απαραίτητα στο χώρο της υπηρεσίας. Ενημερώνει το χρήστη για την κατάσταση της ουράς κάθε χρονική στιγμή και προσφέρει μία εκτίμηση του χρόνου που θα χρειαστεί να περιμένει μέχρι να εξυπηρετηθεί. " />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Easy Ticket</title>
 <!-- InstanceEndEditable -->  
-<link href="images/delpi.jpg" rel="icon" type="image/png" />
-<link rel="stylesheet" href="main.css">
+ 
+<link rel="shortcut icon" href="images/favic.ico" type="image/x-icon">
+<link rel="icon" href="images/favic.ico" type="image/x-icon">
+ <link rel="stylesheet" href="main.css">
+
+
 <script>
-  <!--  
+    
      if($(window).width() < <?php echo SCREEN_WIDTH ?> )
 	       	document.location = "m.index.php";
-  -->    
+      
  </script>
 <!-- InstanceBeginEditable name="head" -->   
 
@@ -20,10 +25,10 @@
 
 <body> 
 <div id="container">
-
+ 
 <div align="center">
 <a href="index.php">
-<img src="logo_1163129_web.jpg" alt="asd" width="140" height="68" align="left" />  
+<img src="logo_1163129_web.jpg" alt="asd" width="140" height="40" align="left" />  
 </a>  
   <h2 id="title_"><em><strong><em><strong></strong></em>ΚΑΛΩΣΗΡΘΑΤΕ ΣΤΗΝ EASY TICKET ! </strong></em></h2>
 </div>
@@ -33,11 +38,10 @@
 <a href="index.php?lang=es"><img src="images/greece.png" /></a>
 </div>
 
-<nav align="center"> 
-<div id="navigation">
+
+<div id="navigation" align="center">
     <ul>
-      <li> </li>
-      <li></li> 
+    
       <li><a href="index.php"> Αρχική </a></li>
       <li><a href="products.php"> Προιόντα </a></li>
        <li><a href="about.php"> Σχετικά </a></li>
@@ -46,7 +50,7 @@
     </ul>
   
 </div>
-</nav>
+
 <!-- InstanceBeginEditable name="lol" -->
 
 
@@ -159,11 +163,31 @@ if ($error != '')
 <form id="login_app"    method="POST" action="validate_contact.php" >
 
   <br>
-<em><strong> TO  :    </em></strong> <input class ="input_"  name="from" type="text" value="<?php echo $from; ?>" />   <span style="color:#900">(required ) </span>  <br>
-<em><strong> SUBJECT : </em></strong> <input class ="input_"  name="subject" type="text" value="<?php echo $subject; ?>" /> <span style="color:#900">(οptional    ) </span> <br> 
-<em><strong>ΜESSAGE : <br>  </em></strong><textarea  class="input_" name="message"  rows="7" cols="50" value="<?php echo $message; ?>"></textarea><br>
-
- <input type="submit" name="submit" class="button" value="Send" />
+  <table>
+	<tr>
+	<td><em><strong> ΑΠΟΣΤΟΛΕΑΣ:</em></strong> </td>
+	<td> <input  name="from" type="text" value="<?php echo $from; ?>" />   <span style="color:#900">(required ) </span>   
+	</td>
+	</tr>
+    
+    <tr>
+	<td><em><strong> ΘΕΜΑ: </em></strong> </td>
+	<td>  <input  name="subject" type="text" value="<?php echo $subject; ?>" /> <span style="color:#900">(οptional    ) </span>
+	</td>
+	</tr>
+    
+      <tr>
+	<td> <em><strong> ΜΥΝΗΜΑ :   </em></strong> </td> 
+   </br>
+	<td> <textarea   name="message"  rows="5" cols="35" value="<?php echo $message; ?>"></textarea><br>
+	</td>
+	</tr>
+    
+    
+    
+    </table>
+</br></br></br></br>
+ <input type="submit" name="submit" class="button" value="Αποστολή" />
 
 </form>
 
@@ -174,12 +198,15 @@ if ($error != '')
 
 
   <script src="js/index.js"></script>
- 
-   
+  <div class="push">
+  </div>
 <div id="footer">
-  
-<img src="images/copy.png"  alt="asd" width="20" height="10"  />  Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
+   
+ Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
 </div>
 </div>
+
+
+
 </body>
 <!-- InstanceEnd --></html>

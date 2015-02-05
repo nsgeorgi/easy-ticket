@@ -1,17 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+session_start();
+?>
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="C:\xampp\htdocs\Templates\dw.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
+<meta name="description" content="To   Easy Ticket  είναι ένα πρόγραμμα, το οποίο έχει ως σκοπό να αποφορτίζει τις ουρές αναμονής σε διάφορες υπηρεσίες, όπως η Εφορία ή ένα νοσοκομείο. Παρέχει στον ενδιαφερόμενο χρήστη, τη δυνατότητα να λαμβάνει σειρά στην ουρά είτε από κάποιο μηχάνημα της υπηρεσίας, είτε ηλεκτρονικά, από τον προσωπικό υπολογιστή του μέσω Internet, χωρίς να βρίσκεται απαραίτητα στο χώρο της υπηρεσίας. Ενημερώνει το χρήστη για την κατάσταση της ουράς κάθε χρονική στιγμή και προσφέρει μία εκτίμηση του χρόνου που θα χρειαστεί να περιμένει μέχρι να εξυπηρετηθεί. " />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Easy Ticket</title>
 <!-- InstanceEndEditable -->  
-<link href="images/delpi.jpg" rel="icon" type="image/png" />
-<link rel="stylesheet" href="main.css">
+ 
+<link rel="shortcut icon" href="images/favic.ico" type="image/x-icon">
+<link rel="icon" href="images/favic.ico" type="image/x-icon">
+ <link rel="stylesheet" href="main.css">
+
+
 <script>
-  <!--  
+    
      if($(window).width() < <?php echo SCREEN_WIDTH ?> )
 	       	document.location = "m.index.php";
-  -->    
+      
  </script>
 <!-- InstanceBeginEditable name="head" -->   
 
@@ -20,10 +28,10 @@
 
 <body> 
 <div id="container">
-
+ 
 <div align="center">
 <a href="index.php">
-<img src="logo_1163129_web.jpg" alt="asd" width="140" height="68" align="left" />  
+<img src="logo_1163129_web.jpg" alt="asd" width="140" height="40" align="left" />  
 </a>  
   <h2 id="title_"><em><strong><em><strong></strong></em>ΚΑΛΩΣΗΡΘΑΤΕ ΣΤΗΝ EASY TICKET ! </strong></em></h2>
 </div>
@@ -33,11 +41,10 @@
 <a href="index.php?lang=es"><img src="images/greece.png" /></a>
 </div>
 
-<nav align="center"> 
-<div id="navigation">
+
+<div id="navigation" align="center">
     <ul>
-      <li> </li>
-      <li></li> 
+    
       <li><a href="index.php"> Αρχική </a></li>
       <li><a href="products.php"> Προιόντα </a></li>
        <li><a href="about.php"> Σχετικά </a></li>
@@ -46,17 +53,15 @@
     </ul>
   
 </div>
-</nav>
+
 <!-- InstanceBeginEditable name="lol" -->
-
-
 
 
 
 <div align="center">
   <p><!-- Begin DWUser_EasyRotator -->
 <script type="text/javascript" src="http://c520866.r66.cf2.rackcdn.com/1/js/easy_rotator.min.js"></script>
-<div class="dwuserEasyRotator" style="width: 1000px; height: 417px; position:relative; text-align: left;" data-erconfig="{autoplayEnabled:false, lpp:'102-105-108-101-58-47-47-47-67-58-47-85-115-101-114-115-47-78-105-99-107-47-68-111-99-117-109-101-110-116-115-47-69-97-115-121-82-111-116-97-116-111-114-80-114-101-118-105-101-119-47-112-114-101-118-105-101-119-95-115-119-102-115-47', wv:1}" data-ername="eeee" data-ertid="{awl2764tt9713363865141}">
+<div mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" mmTranslatedValueHiliteColor="HILITECOLOR=%22Dyn%20Untranslated%20Color%22" mmTranslatedValueDynAttrs="DynAttrs=data-ertid" class="dwuserEasyRotator" style="width: 1000px; height: 417px; position:relative; text-align: left;" data-erconfig="{autoplayEnabled:false, lpp:'102-105-108-101-58-47-47-47-67-58-47-85-115-101-114-115-47-78-105-99-107-47-68-111-99-117-109-101-110-116-115-47-69-97-115-121-82-111-116-97-116-111-114-80-114-101-118-105-101-119-47-112-114-101-118-105-101-119-95-115-119-102-115-47', wv:1}" data-ername="eeee" data-ertid="{awl2764tt9713363865141}">
   <div data-ertype="content" style="display: none;"><ul data-erlabel="Main Category">
 	<li>
 		 <img class="main" src="thief.jpg" alt="Waiting to be served? Not anymore!" /> <img class="thumb" src="thief.jpg" /> 
@@ -115,29 +120,102 @@
 <!-- End DWUser_EasyRotator --></p>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="body" --> 
-<h3> ΦΟΡΜΑ ΣΥΜΠΛΗΡΩΣΗΣ ΣΤΟΙΧΕΙΩΝ ΥΠΗΡΕΣΙΑΣ </h3> 
-<form id="login_app" >
+<?php
+if (isset($_SESSION['errors']))
+$errors=$_SESSION['errors'];
+else  $_SESSION['errors']='';
 
-Όνομα εταιρείας  : <input class ="input_"  name="AMKA ETAIΡΕΙΑΣ" type="text" value="" />  <br> 
-AΦΜ εταιρείας: <input class ="input_"  name="AMKA ETAIΡΕΙΑΣ" type="text" value="" />  <br>
-Tηλέφωνο εταιρείας  : <input class ="input_"  name="AMKA ETAIΡΕΙΑΣ" type="text" value="" />  <br>
-Εmail  : <input class ="input_"  name="AMKA ETAIΡΕΙΑΣ" type="text" value="" />  <br>
-Περιοχή : <input class ="input_"  name="AMKA ETAIΡΕΙΑΣ" type="text" value="" />  <br>
-Όνομα Χρήστη : <input class ="input_"  name="AMKA ETAIΡΕΙΑΣ" type="text" value="" /> <br> 
-<!--Συνθηματικό : <input class ="input_"  name="AMKA ETAIΡΕΙΑΣ" type="text" value="" /> <br>  -->
-<!--Συνθηματικό-ξανά : <input class ="input_"  name="AMKA ETAIΡΕΙΑΣ" type="text" value="" /> <br> -->
-Εισάγετε τον κωδικό:
-<input name="verif_box" type="text" id="verif_box" style="padding:2px; border:1px solid #CCCCCC; width:180px; height:14px;font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;"/>
-<img src="verificationimage.php?<?php echo rand(0,9999);?>" alt="verification image, type it in the box" width="50" height="24" align="absbottom" /><br />
-<br />
+?>
 
-<!-- if the variable "wrong_code" is sent from previous page then display the error field -->
-<?php if(isset($_GET['wrong_code'])){?>
-<div style="border:1px solid #990000; background-color:#D70000; color:#FFFFFF; padding:4px; padding-left:6px;width:295px;">Wrong verification code</div><br /> 
-<?php ;}?>
- <input type="submit" name="submit" class="button" value="Καταχώρηση" />
+ 
+    <?php
+   
+   
+   if (!empty($errors)) {
+		echo '<h3>Σφάλμα!</h3>
+		<p  class="error"><font color="red">Τα παρακάτω σφάλματα υπάρχουν:<br />';
+		foreach ($errors as $msg) { 
+			echo " - $msg<br />\n";
+		}
+		echo '</p><p >Παρακαλώ προσπαθήστε ξανά.</p><p></font></p>';
+   }
+    unset($_SESSION['errors']);  
+?>
+
+<h3 class="text"> ΦΟΡΜΑ ΣΥΜΠΛΗΡΩΣΗΣ ΣΤΟΙΧΕΙΩΝ ΥΠΗΡΕΣΙΑΣ </h3> 
+<div id="login">
+<form action="validate_application_form.php" method="POST">
+
+<table>
+	<tr>
+	<td>Όνομα εταιρείας:</td>
+	<td><input type="text" name="first_name" size="20" maxlength="20" value="<?php if (isset($trimmed['first_name'])) echo $trimmed['first_name']; ?>" /> 
+	<small>Επιτρέπονται μόνο λατινικοί χαρακτήρες.</small></td>
+	</tr>
+	
+	<tr>
+	<td>AΦΜ εταιρείας: </td>
+	<td><input type="text" name="last_name" size="20" maxlength="9" value="<?php if (isset($trimmed['last_name'])) echo $trimmed['last_name']; ?>" />
+	</td></td>
+	</tr>
+	
+    
+    
+<tr>
+	<td>Tηλέφωνο εταιρείας: </td>
+	<td><input type="text" name="mobile" size="20" maxlength="40" value="<?php if (isset($trimmed['mobile'])) echo $trimmed['mobile']; ?>" />
+	</td></td>
+	</tr>
+
+
+<tr>
+	<td>Περιοχή: </td>
+	<td><input type="text" name="location" size="20" maxlength="40" value="<?php if (isset($trimmed['location'])) echo $trimmed['locaton']; ?>" />
+	<small>Επιτρέπονται μόνο λατινικοί χαρακτήρες.</small></td></td>
+	</tr>
+
+
+	<tr>
+	<td>Διεύθυνση Email: </td> 
+	<td><input type="text" name="email" size="20" maxlength="50" value="<?php if (isset($trimmed['email'])) echo $trimmed['email']; ?>" /> </td>
+	</tr>
+    
+    <tr>
+	<td>Επιβεβαίωση Email: </td> 
+	<td><input type="password" name="conf_email" size="20" maxlength="20" value="<?php if (isset($trimmed['conf_email'])) echo $trimmed['conf_email']; ?>" /></td>
+	</tr>
+	
+	<tr>
+	<td>Όνομα χρήστη: </td>
+	<td><input type="text" name="user_name" size="20" maxlength="20" value="<?php if (isset($trimmed['user_name'])) echo $trimmed['user_name']; ?>" /> 
+	<small>Επιτρέπονται μόνο γράμματα, αριθμοί και η κάτω παύλα (4-20 χαρακτήρες).</small></td>
+	</tr>
+	
+	<tr>
+	<td>Εισάγετε τον κωδικό: </td>
+	<td><input name="verif_box" type="text" id="verif_box" style="padding:2px; border:1px solid #CCCCCC; width:180px; height:14px;font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;"/>
+<img src="verificationimage.php?<?php echo rand(0,9999);?>" alt="verification image, type it in the box" width="50" height="24" align="absbottom" /><br /></td>
+	</tr>
+	
+
+	
+	<tr>
+	<td></td>
+	<td><input type="submit"  id="submit"class="button"  value="Εγγραφή"  onclick="myFunction()" /></td>
+	</tr>
+</table>
+
+	<input type="hidden" name="submitted" value="true" />
+    </br>
+	
 
 </form>
+
+</div>
+</br>
+<a href="index.php">Αρχική σελίδα</a>
+
+
 
  <!-- InstanceEndEditable -->
   
@@ -146,12 +224,15 @@ Tηλέφωνο εταιρείας  : <input class ="input_"  name="AMKA ETAIΡ�
 
 
   <script src="js/index.js"></script>
- 
-   
+  <div class="push">
+  </div>
 <div id="footer">
-  
-<img src="images/copy.png"  alt="asd" width="20" height="10"  />  Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
+   
+ Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
 </div>
 </div>
+
+
+
 </body>
 <!-- InstanceEnd --></html>

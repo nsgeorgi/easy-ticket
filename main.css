@@ -1,12 +1,17 @@
 @charset "utf-8";
 /* CSS Document */
 @import url(http://fonts.googleapis.com/css?family=Lobster);
+
 body {
-	background-color: #666;
+	background-color: #000;
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	width: 100%;
+	color: #FFF;	
 }
+
+
 #cust_det {
 	padding: 10px 40px 25px;
 	font-size: large;
@@ -23,16 +28,22 @@ body {
 	font-family: "Comic Sans MS", cursive;
 	
 }
-
+#container {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
 
 
 
 #navigation li {
+	width: 100%;
 	display: inline;
 	list-style-type: none;
 	font-family: Arial;
-	font-size: 24px;
-	padding-right:0px;
+	font-size: 20px;
+	//padding-right:0px;
 	/* [disabled]margin: 50px; */
 	
 	
@@ -40,6 +51,7 @@ body {
 #table01 {
 	
 	padding-top:65px;
+	color: #FFF;
 //	margin: 100 px;
 
 }
@@ -55,27 +67,31 @@ body {
 	
 	color: #FFF;
 	text-decoration: none;
-	border-radius: 30px;
-	background-color: #666
+//	border-radius: 30px;
+//	background-color: #666;
 	
 }
+
 #footer {
 	font-size: 14px;
 	position: absolute;
 	width: 100%;
-	bottom: -600px;
-	
+	/*bottom: -850px; */
+	color: #FFF;
 	height: 30px;
 	text-align: center;
 	
 }
 
 
+ .push {
+	height: 155px; /* .push must be the same height as .footer */
+}
 
 
 #navigation a:hover {
-background-color:#F90;
-color: #666;
+// background-color:#F90;
+color: #F90;
 }
 
 #login_app {
@@ -90,13 +106,18 @@ color: #666;
 	color: #FFF;
 }
 #title_{
+	width: 100%;
 	font-family: "Comic Sans MS", cursive;
 	text-align: center;
-	background-color: #000;
-	color: #FFF;
+	background-color: #FFF ;
+	color: #000;
 	 margin: 0px;
 	padding: 0px;
-	font-size:48px ;
+	font-size:28px ;
+	border: 8px solid #FFF;
+	border-bottom:thin;
+	border-bottom-color:#FFF;
+
 }
 
 
@@ -108,15 +129,20 @@ color: #666;
 .text {
 	font-family: "Comic Sans MS", cursive;
 	font-size: 16px;
+	color: #FFF;
+	background-color: #000;
 }
 
 .links {
 	font-family: "Arial Black", Gadget, sans-serif;
 	font-size: 14px;
-	font-style: italic;
+	//font-style: italic;
 	padding-bottom: 30px;
+	color:#F00;
 	
-	color: #990000;
+}
+.links a:hover { 
+color:#006;
 }
 
 
@@ -132,7 +158,7 @@ color: #666;
 	background-color: #000;
 	color: #FFF;
 	 
-	font-size:35px ;
+	font-size:28px ;
 }
 
 
@@ -186,12 +212,103 @@ color: #666;
 	background-color: #000;
 	color: #FFF;
 }
-
+/*
 table, th, td {
     border: 1px solid black;
+	color: #FFF;
     border-collapse: collapse;
 }
 th, td {
+	color: #FFF;
     padding: 5px;
     text-align: left;
 }
+
+*/
+
+/**
+ * FILE: jquery.ptTileSelect.css
+ * 	Default style for the timeselect container.
+ * 
+ *  LAST UPDATED:
+ * 
+ * 		- $Date: 2009/04/12 20:23:02 $
+ * 		- $Author: paulinho4u $
+ * 		- $Revision: 1.1 $
+ */
+#ptTimeSelectCntr {
+	width: 250px; 
+	font-size: .9em;
+	position: absolute;
+	z-index: 10;
+	display: none;
+}
+#ptTimeSelectCntr .ui-widget{
+	padding: .2em;
+}
+#ptTimeSelectCntr .ui-widget-header {
+	padding: .2em;
+}
+#ptTimeSelectCntr #ptTimeSelectUserTime {
+	font-size: larger;
+	padding: .2em;
+	padding-left: 1em;
+	text-align: center;
+}
+#ptTimeSelectCntr #ptTimeSelectCloseCntr {
+	display: block;
+	padding: .2em;
+}
+#ptTimeSelectCntr #ptTimeSelectCloseCntr a {
+	display: block;
+	padding: .2em;
+}
+#ptTimeSelectCntr .ui-widget-content {
+	 margin-top: .1em;
+	 margin-bottom: .1em; 
+	 padding: .2em;	
+}
+#ptTimeSelectCntr .ui-widget.ui-widget-content {
+	margin-top: 0;
+}
+#ptTimeSelectCntr .ptTimeSelectLeftPane.ui-widget-content {
+	border-top:none;
+	border-bottom:none;
+	border-left:none;
+	border-right-width: 2px;
+}
+#ptTimeSelectCntr .ptTimeSelectRightPane.ui-widget-content {
+	border: none;
+	
+}
+#ptTimeSelectCntr .ptTimeSelectHrCntr a,
+#ptTimeSelectCntr .ptTimeSelectMinCntr a {
+	display: block;
+	float: left;
+	padding: .2em;
+	width: 1.9em;
+	margin: 1px;
+	text-align: center;
+	text-decoration: none;
+}
+#ptTimeSelectCntr .ptTimeSelectHrAmPmCntr a {
+	text-align: center;
+	margin: 1px;
+}
+#ptTimeSelectCntr .ptTimeSelectTimeLabelsCntr {
+	font-weight: bold;
+	font-size: .9em;
+}
+#ptTimeSelectCntr #ptTimeSelectSetButton {
+	padding-top: .2em;
+	padding-bottom: .2em;
+}
+#ptTimeSelectCntr #ptTimeSelectSetButton a {
+ 	display: block;
+	padding: .2em;
+	width: 30%;
+	text-align: center;
+	
+	float: right;
+}
+

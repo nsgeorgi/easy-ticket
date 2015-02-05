@@ -32,9 +32,9 @@ $service= $_SESSION['service'] ;
 	
 	// Build the query string to be attached 
 // to the redirected URL
-$amka=$_GET['amka'];
-$query_string = '?amka=' . $amka;
-$time= date('h:i:s',time());
+$username=$_GET['username'];
+$query_string = '?username=' . $username;
+$time= date('H:i:s',time());
 $query_string2 = '&time=' . $time;
 
 // Redirection needs absolute domain and phisical dir
@@ -66,7 +66,7 @@ else $next_page = 'getnumber.php';
     $con = mysqli_connect(HOST, USER, PASS, DB) or die(mysqli_connect_error());
 
  
-    $query = "delete  from `$service` where amka =$amka";
+    $query = "delete  from `$service` where username ='$username'";
 
     $res = mysqli_query($con, $query) or die(mysqli_error());
    
@@ -76,8 +76,9 @@ else $next_page = 'getnumber.php';
  $query ="SELECT * FROM `$service`";
 $res = mysqli_query($con, $query) or die(mysqli_error());
 //echo $result;
-$res->num_rows;
-$number=$res->num_rows+1;
+$row=mysqli_fetch_array($res);
+$number= $row['number']+1;
+
 
 
 
@@ -93,7 +94,7 @@ $row = mysqli_fetch_array($res);
 					
 if ($num_results == 0){ 
 //echo " 0 results " ; return ;  
-$time = date('h:i:s', strtotime(' +15 minutes'));
+$time = date('H:i:s', strtotime(' +15 minutes'));
 $query_string2 = '&time=' . $time;
 }
 			// -------- ALLIWS DINW STO NOUMERO  + 5 LEPTA -------
@@ -102,19 +103,19 @@ $query_string2 = '&time=' . $time;
  //echo " 1 results " ; return ;
  $time2=$row['time'];
   $my_time1 = strtotime("+5 minutes", strtotime($time2));;
- $time = date('h:i:s',$my_time1);
+ $time = date('H:i:s',$my_time1);
 
 $query_string2 = '&time=' . $time;
  }
  
- echo $amka;
+ echo $username;
  echo "  ---  ";
  echo $number;
  echo $time;
  $line =1;
  $attempt=2;
  $mobile="0";
-    $query = "insert into `$service` (amka,number,mobile,time,line,attempt) values ('$amka', '$number','$mobile','$time','$line','$attempt');" or die(mysqli_error());
+    $query = "insert into `$service` (username,number,mobile,time,line,attempt) values ('$username', '$number','$mobile','$time','$line','$attempt');" or die(mysqli_error());
     $res = mysqli_query($con, $query);
     if ($res == FALSE)
     {

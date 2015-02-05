@@ -1,24 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
-include "defines.php";
+session_start();// Starting Session
+if (!isset($_SESSION['EMAIL']) ) {
+include "session_customer.php";  }
+else {include "defines.php";  }
 $page = $_SERVER['PHP_SELF'];
-$sec = "100";
+//$sec = "60";
 date_default_timezone_set('Europe/Athens');
 
+
+if (empty($_SESSION['logged_in'])) {  $server_dir = $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF']), '/\\') . '/';
+  $next_page = 'login_home.php';
+ header('Location: http://' . $server_dir . $next_page );  }
+
+ $now = time(); // Checking the time now when home page starts.
+
+        if ($now > $_SESSION['expire']) {
+            session_destroy();
+            echo "Your session has expired! <a href='http://localhost/somefolder/login.php'>Login here</a>";
+        }
 ?>
+
+
+
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="C:\xampp\htdocs\Templates\dw.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
+<meta name="description" content="To   Easy Ticket  είναι ένα πρόγραμμα, το οποίο έχει ως σκοπό να αποφορτίζει τις ουρές αναμονής σε διάφορες υπηρεσίες, όπως η Εφορία ή ένα νοσοκομείο. Παρέχει στον ενδιαφερόμενο χρήστη, τη δυνατότητα να λαμβάνει σειρά στην ουρά είτε από κάποιο μηχάνημα της υπηρεσίας, είτε ηλεκτρονικά, από τον προσωπικό υπολογιστή του μέσω Internet, χωρίς να βρίσκεται απαραίτητα στο χώρο της υπηρεσίας. Ενημερώνει το χρήστη για την κατάσταση της ουράς κάθε χρονική στιγμή και προσφέρει μία εκτίμηση του χρόνου που θα χρειαστεί να περιμένει μέχρι να εξυπηρετηθεί. " />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Choose service </title>
 <!-- InstanceEndEditable -->  
-<link href="images/delpi.jpg" rel="icon" type="image/png" />
-<link rel="stylesheet" href="main.css">
+ 
+<link rel="shortcut icon" href="images/favic.ico" type="image/x-icon">
+<link rel="icon" href="images/favic.ico" type="image/x-icon">
+ <link rel="stylesheet" href="main.css">
+
+
 <script>
-  <!--  
+    
      if($(window).width() < <?php echo SCREEN_WIDTH ?> )
 	       	document.location = "m.index.php";
-  -->    
+      
  </script>
 <!-- InstanceBeginEditable name="head" -->   
 
@@ -27,10 +49,10 @@ date_default_timezone_set('Europe/Athens');
 
 <body> 
 <div id="container">
-
+ 
 <div align="center">
 <a href="index.php">
-<img src="logo_1163129_web.jpg" alt="asd" width="140" height="68" align="left" />  
+<img src="logo_1163129_web.jpg" alt="asd" width="140" height="40" align="left" />  
 </a>  
   <h2 id="title_"><em><strong><em><strong></strong></em>ΚΑΛΩΣΗΡΘΑΤΕ ΣΤΗΝ EASY TICKET ! </strong></em></h2>
 </div>
@@ -40,11 +62,10 @@ date_default_timezone_set('Europe/Athens');
 <a href="index.php?lang=es"><img src="images/greece.png" /></a>
 </div>
 
-<nav align="center"> 
-<div id="navigation">
+
+<div id="navigation" align="center">
     <ul>
-      <li> </li>
-      <li></li> 
+    
       <li><a href="index.php"> Αρχική </a></li>
       <li><a href="products.php"> Προιόντα </a></li>
        <li><a href="about.php"> Σχετικά </a></li>
@@ -53,10 +74,13 @@ date_default_timezone_set('Europe/Athens');
     </ul>
   
 </div>
-</nav>
+
 <!-- InstanceBeginEditable name="lol" -->
 
-
+<?php $username=$_SESSION['login_user']; ?>
+<div  align="right"  >
+<span> Welcome <?php echo $username; ?> ! </span> </br>
+<a class="links" id="logout"  href="logout.php">Log Out <?php/* echo $username; */?></a></div>
 
 
 
@@ -122,8 +146,8 @@ date_default_timezone_set('Europe/Athens');
 <!-- End DWUser_EasyRotator --></p>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="body" --> 
-
- <h3> Επέλεξε μια δημόσια υπηρεσία</h3>
+ 
+ <h3 class= 'text'> Επέλεξε μια δημόσια υπηρεσία</h3>
  <?php
    $con = mysqli_connect(HOST, USER, PASS, DB) or die(mysqli_connect_error());
   mysqli_query($con,"SET NAMES 'utf8'");
@@ -134,14 +158,18 @@ date_default_timezone_set('Europe/Athens');
      // $row = mysqli_fetch_array($res);
 	  //$num_results = mysqli_num_rows($res); 
 	?>  
- <form action="customer.php" method="POST"  >
+ <form action="validate_choose_service.php" method="POST"  >
 <select name="service"  style="width: 300px; height :25px;"  >
  
 
  <?php  while( $row = mysqli_fetch_array($res)) { 
 	   echo '
 <option value="'. htmlspecialchars($row['name']) . '"> ' ;  echo $row['name'];  echo "</option> "  ;
- } ?>  
+ }
+ 
+// $output[]=$row['name']; 
+// print(json_encode($output));
+  ?>  
 
 </select>
   
@@ -158,12 +186,15 @@ date_default_timezone_set('Europe/Athens');
 
 
   <script src="js/index.js"></script>
- 
-   
+  <div class="push">
+  </div>
 <div id="footer">
-  
-<img src="images/copy.png"  alt="asd" width="20" height="10"  />  Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
+   
+ Copyright &copy; - 2014 Site designed and created by Easy Ticket - All rights reserved</div>
 </div>
 </div>
+
+
+
 </body>
 <!-- InstanceEnd --></html>

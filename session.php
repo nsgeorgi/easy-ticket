@@ -14,7 +14,7 @@ $connection = mysql_connect(HOST, USER, PASS);
 $db = mysql_select_db(DB, $connection);
 session_start();// Starting Session
 // Storing Session
-$user_check=$_SESSION['login_user'];
+$user_check=$_SESSION['login_user_service'];
 // SQL Query To Fetch Complete Information Of User
 $ses_sql=mysql_query("select username from login where username='$user_check'", $connection);
 $row = mysql_fetch_assoc($ses_sql);

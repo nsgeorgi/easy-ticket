@@ -9,15 +9,13 @@
 
 <?php
 session_start();
-if(session_destroy()) // Destroying All Sessions
-{
 
       unset($_SESSION['logged_in']);  
-      session_destroy();  
+    //  session_destroy();  
 
 header("Location: index.php"); // Redirecting To Home Page
 
-}
+
 ?>
 </body>
 </html>

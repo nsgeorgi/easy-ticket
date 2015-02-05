@@ -23,17 +23,6 @@ $error = '';
 if(isset($_POST['submit'])) {
 
 
-  if(isset($_POST['amka'])) {
-    $_POST['amka']=preg_replace("/[^0-9]/", "", $_POST['amka']);
-
-    if(strlen($_POST['amka']) != AMKA_LENGTH)
-    {
-		$error = 'Μη εγκύρος ΑΜΚΑ, βεβαιωθείτε οτι ο ΑΜΚΑ που έχετε εισάγει είναι σωστός και προσπαθήστε ξανα <br />'; 
-      echo $error;
-	   echo '<br /> 
-    <a class="button" href="already_number.php">Πίσω </a> ';
-   //   return;
-    }
 	
 	if(strlen($_POST['mobile']) != MOBILE_LENGTH && strlen($_POST['mobile']) != 0)
     {
@@ -42,23 +31,13 @@ if(isset($_POST['submit'])) {
    //   return;
     }   
 
-    $day = substr($_POST['amka'], 0, 2);
-    $month =substr($_POST['amka'], 2, 2);
-    $year =substr($_POST['amka'], 4, 2);
-
-    if(!checkdate($month,$day, $year)) { 
-	$error = 'Μη εγκύρος ΑΜΚΑ, βεβαιωθείτε οτι ο ΑΜΚΑ που έχετε εισάγει είναι σωστός και προσπαθήστε ξανα <br />'; 
-      echo $error;
-    
-   //   return;
-    }
-		
-	
+ 
 	// Build the query string to be attached 
 // to the redirected URL
-$amka=$_POST['amka'];
+
 $mobile=$_POST['mobile'];
-$query_string = '?amka=' . $amka;
+$username =$_SESSION['login_user'];
+$query_string = '?username=' . $username;
 
 // Redirection needs absolute domain and phisical dir
 $server_dir = $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF']), '/\\') . '/';
@@ -72,7 +51,7 @@ if ($error != '') {
    // Back to register page
    $next_page = 'insert_amka.php';
    // Add error message to the query string
-   $query_string .= '&error=' . $error;
+   $query_string = '?error=' . $error;
    // This message asks the server to redirect to another page
    header('Location: http://' . $server_dir . $next_page . $query_string);
 }
@@ -84,57 +63,62 @@ else $next_page = 'getnumber.php';
 
 
 
-					//-- ELEGXOS YPARKIS IDIOY AMKA -----
+					//-- ELEGXOS YPARKIS IDIOY USERNAME-----
 
     $con = mysqli_connect(HOST, USER, PASS, DB) or die(mysqli_connect_error());
 
  $service= $_SESSION['service'] ;
-    $query = "select * from  `$service` where amka ='$_POST[amka]'";
 
-    $res = mysqli_query($con, $query) or die(mysqli_error());
+ 
+    $query = "select * from  `$service` where username ='$username' ";
+
+    $res = mysqli_query($con, $query)  ;
    
       $row = mysqli_fetch_array($res);
 	  $num_results = mysqli_num_rows($res); 
-	  $flag=false;
-      if($num_results > 0 ) {
-		   
+	  $flag_2=false;
+      if( $num_results >0 ) {
+		   // $row = mysqli_fetch_array($res);
+	 // $num_results = mysqli_num_rows($res); 
 		    $now = new DateTime();
 			
 	  if ($row['time'] < $now->format(' H:i:s') ) { 
-	   $query = "Update `$service` set line = 0 where amka ='$_POST[amka]' "or die(mysqli_error());
+	   $query = "Update `$service` set line = 0 where username ='$username' ";
 	   $res = mysqli_query($con, $query) or die(mysqli_error());
-	   $flag=true;
+	   $flag_2=true;
 	  }
 						// --- ELEGXOS AN TO IDIO AMKA VRISKETAI AKOMA STIN OURA -----
 						
 						
 	  if ($row['line']==1) {
-        echo 'Ο ΑΜΚΑ που προσπαθείτε να καταχωρήσετε έχει ήδη πάρει σειρά. ';
-		 echo '<br /> 
-    <a class="button" href="index.php">Πίσω </a> ';
-        return;
+       
+         $flag='1';
       }
-	    if ($row['line']==0  && $row['attempt']!=2 ) {
-			  $query = "delete  from `$service` where amka =$amka";
+	  if ($row['attempt']==2) {
+		  $flag='2';
+	  }
+	    if ($row['line']==0  && $row['attempt']!=2 ) { // AN EXEI PAREI THESI KAI EXEI TELEIWSEI
+			  $query = "delete  from `$service` where username ='$username'";
 	   $res = mysqli_query($con, $query) or die(mysqli_error());
-      	$flag=true;
+      	$flag_2=true;
       }
 
   
 	} 
-	  if($num_results == 0 ||  $flag==true ) { 
+	  if($num_results == 0 ||  $flag_2==true ) { 
 						
 						//-- EFOSON DEN YPARXEI TO AMKA , TO EKXWRW ---
 			$attempt=$row['attempt'] +1 ;			
-   $query ="SELECT * FROM `$service`";
+   $query ="SELECT * FROM `$service` ORDER BY number DESC";
 $res = mysqli_query($con, $query) or die(mysqli_error());
 //echo $result;
-$res->num_rows;
-$number=$res->num_rows+1;
+//$res->num_rows;
+$row=mysqli_fetch_array($res);
+$number= $row['number']+1;
 
 
 							//----- UPDATE THN OURA		--------- auto den xreiazotan giati to update tha ginei stin queue.php alla dn peirazei
- $query = "Update `$service` set line = '0' where time > 'time()' "or die(mysqli_error());
+ $query = "Update `$service` set line = '0' where time < 'time()' "or die(mysqli_error());
    $res = mysqli_query($con, $query) or die(mysqli_error());
    
    $now = new DateTime();
@@ -159,19 +143,20 @@ $time = date('H:i:s ', strtotime(' +15 minutes'));
  else {
  //echo " 1 results " ; return ;
  $time2=$row['time'];
-  $my_time1 = strtotime("+5 minutes", strtotime($time2));;
- $time = date('h:i:s',$my_time1);
+  $my_time1 = strtotime("+5 minutes", strtotime($time2));
+ $time = date('H:i:s',$my_time1);
  echo  $time2      ;
  echo  $my_time1      ;
  echo  $time      ;
  }
  
  $line =1;
-    $query = "insert into `$service` (amka,number,mobile,time,line,attempt) values ('$_POST[amka]', '$number','$mobile','$time','$line','$attempt');" or die(mysqli_error());
+    $query = "insert into `$service` (username,number,mobile,time,line,attempt) values ('$username', '$number','$mobile','$time','$line','$attempt')" ;
     $res = mysqli_query($con, $query);
     if ($res == FALSE)
     {
-      echo 'Παρακαλούμε προσπαθήστε ξανα';
+      echo $number;
+	  echo 'Παρακαλούμε προσπαθήστε ξανα';
       return;
     }
     mysqli_close($con);
@@ -181,19 +166,19 @@ $time = date('H:i:s ', strtotime(' +15 minutes'));
 //$_SESSION['my_time_']  = $my_time;
 //$_SESSION['line_']  = $line;
 
-}else { echo 'Ο ΑΜΚΑ που προσπαθείτε να καταχωρήσετε έχει ήδη πάρει σειρά 2 φορές .Δεν δικαιούστε άλλες. ';
-		 echo '<br /> 
-    <a class="button" href="index.php">Πίσω </a> ';
-        return; }
+}else { 
+      //  $flag='2';
+	   }
    // echo "Έχετε τον αριθμό $number_rows. Παρακαλούμε να προσέλθετε στη δημόσια υπηρεσία με το ΑΜΚΑ σας $_POST[amka] και την ταυτότητά σας.";
  
-  }
+  
 }
 //Redirect to confirmation page
 
 $query_string2 = '&time=' . $time;
 $query_string3 = '&number=' . $number;
-header('Location: http://' . $server_dir . $next_page . $query_string . $query_string2 . $query_string3);
+$query_string4 = '&flag=' . $flag;
+header('Location: http://' . $server_dir . $next_page . $query_string . $query_string2 . $query_string3 . $query_string4);
 ?>
 </div>
 </body>
